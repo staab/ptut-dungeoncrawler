@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dungeon Crawler Tutorial</title>
+    <link rel="icon" href="assets/barbarian.png" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="loading">
+    <div id="app">
+      <section id="guide" aria-label="Tutorial">
+        <header class="guide-header">
+          <button id="menu-button" class="menu-button" aria-haspopup="true" aria-expanded="false">☰ Chapters</button>
+          <div class="guide-titles">
+            <div id="chapter-eyebrow" class="eyebrow"></div>
+            <div id="chapter-title" class="guide-title">Loading…</div>
+          </div>
+          <img class="guide-mascot" src="assets/barbarian.png" alt="" />
+        </header>
+        <nav id="step-dots" class="step-dots" aria-label="Steps"></nav>
+        <div id="chapter-menu" class="chapter-menu" hidden></div>
+
+        <div id="guide-scroll" class="guide-scroll">
+          <article id="step-content" class="step-content"></article>
+        </div>
+
+        <footer class="guide-footer">
+          <div id="status" class="status" hidden></div>
+          <div class="guide-buttons">
+            <button id="back-button" class="secondary">← Back</button>
+            <button id="hint-button" class="secondary" hidden>💡 Hint</button>
+            <button id="next-button" class="primary">Next →</button>
+          </div>
+        </footer>
+      </section>
+
+      <div id="split-guide" class="splitter splitter-v" role="separator" aria-orientation="vertical"></div>
+
+      <section id="workbench" class="workbench show-run" aria-label="Code">
+        <aside class="files">
+          <div class="files-header">
+            <span>Files</span>
+            <button id="new-file-button" class="small" title="Create a new code file">+ New file</button>
+          </div>
+          <div id="file-list" class="file-list"></div>
+        </aside>
+
+        <div id="editor-column" class="editor-column">
+          <div class="toolbar">
+            <div id="tabs" class="tabs" role="tablist"></div>
+            <div class="toolbar-buttons">
+              <button id="show-run" class="icon" title="Show or hide the game and console">▣ Game</button>
+              <button id="play-button" class="play" title="Run your game (Ctrl + Enter)">▶ Play</button>
+            </div>
+          </div>
+          <div class="editor-area">
+            <div id="editor-host" class="editor-host"></div>
+            <div id="asset-preview" class="asset-preview" hidden></div>
+          </div>
+
+          <div id="split-run" class="splitter splitter-h" role="separator" aria-orientation="horizontal"></div>
+
+          <div id="run-area" class="run-area">
+            <div class="run-pane game-pane">
+              <div class="pane-header">
+                <span>Game</span>
+                <span class="pane-buttons">
+                  <button id="max-game" class="icon" title="Make the game bigger">⤢</button>
+                  <button id="stop-button" class="icon" title="Stop the game">■</button>
+                  <button id="toggle-run" class="icon" title="Hide the game and console">▾</button>
+                </span>
+              </div>
+              <div id="game-host" class="game-host">
+                <div class="game-placeholder">Press <b>▶ Play</b> to run your game</div>
+              </div>
+            </div>
+            <div id="split-game" class="splitter splitter-v" role="separator" aria-orientation="vertical"></div>
+            <div class="run-pane console-pane">
+              <div class="pane-header">
+                <span>Console</span>
+                <span class="pane-buttons"><button id="clear-console" class="icon" title="Clear the console">⌫</button></span>
+              </div>
+              <div id="console-output" class="console-output" role="log"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div id="toast" class="toast" hidden></div>
+    <script type="module" src="app/main.js"></script>
+  </body>
+</html>

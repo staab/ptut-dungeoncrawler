@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="color-scheme" content="dark" />
+    <title>Game</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        height: 100%;
+        overflow: hidden;
+        background: #0c0911;
+      }
+      canvas {
+        display: block;
+        width: 100vw;
+        height: 100vh;
+        object-fit: contain;
+        image-rendering: pixelated;
+        outline: none;
+      }
+      #focus-hint {
+        position: fixed;
+        left: 50%;
+        bottom: 12px;
+        transform: translateX(-50%);
+        padding: 6px 14px;
+        border-radius: 999px;
+        background: rgba(255, 180, 84, 0.95);
+        color: #1b1424;
+        font: 600 13px system-ui, sans-serif;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.2s;
+      }
+      body.unfocused #focus-hint {
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="game" width="768" height="576" tabindex="0"></canvas>
+    <div id="focus-hint">Click the game so it can hear your keyboard</div>
+    <script src="runner.js"></script>
+  </body>
+</html>

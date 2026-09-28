@@ -1,0 +1,18 @@
+{
+  "name": "dungeon-tutorial",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "assets": "node build/gen-assets.mjs",
+    "build:app": "tsc -p app",
+    "build:tutorial": "node build/build-tutorial.mjs",
+    "build": "pnpm assets && pnpm build:app && pnpm build:tutorial",
+    "serve": "node build/serve.mjs",
+    "start": "pnpm build && pnpm serve"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3"
+  },
+  "packageManager": "pnpm@11.22.0"
+}
